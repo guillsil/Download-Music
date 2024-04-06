@@ -23,8 +23,12 @@ def descargar_desde_archivo(archivo_entrada, carpeta_salida):
             url = line.strip()
             descargar_audio(url, carpeta_salida)
             # Esperar 10 segundos entre descargas
-            print("Esperando 30 segundos antes de la próxima descarga...")
+            print("Esperando 10 segundos antes de la próxima descarga...")
             time.sleep(10)
+            if url == "":
+                print("URL vacía, se omitirá la descarga de esta línea")
+
+            print("Descarga finalizada")
 
 if __name__ == "__main__":
     archivo_entrada = "canciones.txt"
